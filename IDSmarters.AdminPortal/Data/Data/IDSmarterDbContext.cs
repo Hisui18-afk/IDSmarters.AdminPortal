@@ -70,6 +70,6 @@ namespace IDSmarters.AdminPortal.Data.Migrations
         public DbSet<IDSmarters.AdminPortal.Models.Strand> Strands { get; set; } = default!;
         public DbSet<IDSmarters.AdminPortal.Models.StudentDetail> StudentDetails { get; set; } = default!;
 
-
+        
     }
 }

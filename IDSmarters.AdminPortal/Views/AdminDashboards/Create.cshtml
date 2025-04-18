@@ -1,73 +1,117 @@
 ﻿@model IDSmarters.AdminPortal.Models.AdminDashboard
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Create Admin Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Create</h1>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-<h4>AdminDashboard</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<style>
+    .form-title {
+        color: #006400;
+        font-weight: bold;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .form-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 30px;
+        background-color: #f9f9f9;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .btn-custom {
+        background-color: #006400;
+        color: white;
+        border: none;
+    }
+
+    .btn-custom:hover {
+        background-color: #004d00;
+    }
+
+    .form-label {
+        font-weight: 500;
+    }
+</style>
+
+<div class="container mt-5">
+    <div class="form-container">
+        <h2 class="form-title">Create Admin Dashboard</h2>
+
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
+
+            <div class="mb-3">
+                <label asp-for="Name" class="form-label"></label>
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
+
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label"></label>
                 <input asp-for="Email" class="form-control" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="PhoneNumber" class="control-label"></label>
+
+            <div class="mb-3">
+                <label asp-for="PhoneNumber" class="form-label"></label>
                 <input asp-for="PhoneNumber" class="form-control" />
                 <span asp-validation-for="PhoneNumber" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Address" class="control-label"></label>
+
+            <div class="mb-3">
+                <label asp-for="Address" class="form-label"></label>
                 <input asp-for="Address" class="form-control" />
                 <span asp-validation-for="Address" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="TotalStudents" class="control-label"></label>
+
+            <div class="mb-3">
+                <label asp-for="TotalStudents" class="form-label"></label>
                 <input asp-for="TotalStudents" class="form-control" />
                 <span asp-validation-for="TotalStudents" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="TotalInstructors" class="control-label"></label>
+
+            <div class="mb-3">
+                <label asp-for="TotalInstructors" class="form-label"></label>
                 <input asp-for="TotalInstructors" class="form-control" />
                 <span asp-validation-for="TotalInstructors" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="TotalDeans" class="control-label"></label>
+
+            <div class="mb-3">
+                <label asp-for="TotalDeans" class="form-label"></label>
                 <input asp-for="TotalDeans" class="form-control" />
                 <span asp-validation-for="TotalDeans" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="StudentDashboardId" class="control-label"></label>
-                <select asp-for="StudentDashboardId" class ="form-control" asp-items="ViewBag.StudentDashboardId"></select>
+
+            <div class="mb-3">
+                <label asp-for="StudentDashboardId" class="form-label"></label>
+                <select asp-for="StudentDashboardId" class="form-control" asp-items="ViewBag.StudentDashboardId"></select>
             </div>
-            <div class="form-group">
-                <label asp-for="DeanDashboardId" class="control-label"></label>
-                <select asp-for="DeanDashboardId" class ="form-control" asp-items="ViewBag.DeanDashboardId"></select>
+
+            <div class="mb-3">
+                <label asp-for="DeanDashboardId" class="form-label"></label>
+                <select asp-for="DeanDashboardId" class="form-control" asp-items="ViewBag.DeanDashboardId"></select>
             </div>
-            <div class="form-group">
-                <label asp-for="InstructorDashboardId" class="control-label"></label>
-                <select asp-for="InstructorDashboardId" class ="form-control" asp-items="ViewBag.InstructorDashboardId"></select>
+
+            <div class="mb-3">
+                <label asp-for="InstructorDashboardId" class="form-label"></label>
+                <select asp-for="InstructorDashboardId" class="form-control" asp-items="ViewBag.InstructorDashboardId"></select>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+
+            <div class="d-grid">
+                <button type="submit" class="btn btn-custom">Create</button>
             </div>
         </form>
-    </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+        <div class="text-center mt-3">
+            <a asp-action="Index" class="text-decoration-none">← Back to List</a>
+        </div>
+    </div>
 </div>
 
 @section Scripts {
